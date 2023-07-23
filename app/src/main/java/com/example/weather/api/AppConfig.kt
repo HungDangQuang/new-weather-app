@@ -6,10 +6,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object AppConfig {
     private const val BASE_URL = Constants.WEATHER_URL
-    private val builder = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-
-    val retrofit = builder.build()
+    fun getInstance(): Retrofit {
+        return Retrofit.Builder().baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            // we need to add converter factory to
+            // convert JSON object to Java object
+            .build()
+    }
 
 }
