@@ -13,15 +13,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val weatherApi = AppConfig.getInstance().create(WeatherApi::class.java)
-        runBlocking {
-            launch {
-                val weatherRes = weatherApi.getWeather()
-                if (weatherRes != null) {
-                    Log.d("weather", "onCreate: " + weatherRes.raw().request().url())
-                    Log.d("weather", "onCreate: " + weatherRes.body())
-                }
-            }
-        }
+//        val weatherApi = AppConfig.getInstance().create(WeatherApi::class.java)
+//        runBlocking {
+//            launch {
+//                val weatherRes = weatherApi.getWeather()
+//                if (weatherRes != null) {
+//                    Log.d("weather", "onCreate: " + weatherRes.raw().request().url())
+//                    Log.d("weather", "onCreate: " + weatherRes.body())
+//                }
+//            }
+//        }
     }
 }
